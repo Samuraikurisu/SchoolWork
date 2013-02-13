@@ -20,7 +20,7 @@ namespace FlashingCaution
     {
         public static void Main()
         {
-            Program myApplication = new Program();
+            Program myApplication = new Program(); //Creates new instance of the program
 
             Window mainWindow = myApplication.CreateWindow();
 
@@ -28,7 +28,7 @@ namespace FlashingCaution
             GPIOButtonInputProvider inputProvider = new GPIOButtonInputProvider(null);
 
             // Start the application
-            myApplication.Run(mainWindow);
+            myApplication.Run(mainWindow); //Runs a window object (shows the GUI of the program on the development board)
         }
 
         private Window mainWindow;
@@ -41,7 +41,7 @@ namespace FlashingCaution
         int Count;
         int ButtonCount;
 
-        public Window CreateWindow()
+        public Window CreateWindow() //I may create a new version of this that adheres to MVC. 
         {
             // Create a window object and set its size to the
             // size of the display.
@@ -81,13 +81,13 @@ namespace FlashingCaution
             mainWindow.Child = PositioningCaution;
 
             
-            toggleImage = new DispatcherTimer(PositioningCaution.Dispatcher);
+            toggleImage = new DispatcherTimer(PositioningCaution.Dispatcher); //Adding a timer that will trigger its associated event every second
             toggleImage.Tick += new EventHandler(TimeCaution);
             toggleImage.Interval = new TimeSpan(0, 0, 1);
-            toggleImage.Start();
+            toggleImage.Start(); 
 
             // Connect the button handler to all of the buttons.
-            mainWindow.AddHandler(Buttons.ButtonUpEvent, new ButtonEventHandler(OnButtonUp), false);
+            mainWindow.AddHandler(Buttons.ButtonUpEvent, new ButtonEventHandler(OnButtonUp), false); 
 
             // Set the window visibility to visible.
             mainWindow.Visibility = Visibility.Visible;
@@ -102,8 +102,8 @@ namespace FlashingCaution
         {
             
             ++ButtonCount;
-            toggleImage.Stop();
-            if (((ButtonCount % 2) == 0)&&(ButtonCount!=1))
+            toggleImage.Stop(); //Stops the timer
+            if (((ButtonCount % 2) == 0)&&(ButtonCount!=1)) 
             {
                 toggleImage.Start();
             }
