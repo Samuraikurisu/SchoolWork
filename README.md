@@ -1,4 +1,4 @@
 SchoolWork
 ==========
 
-Code and Projects that were developed during my time at IUPUI. 
+Code and Projects that were developed during my time at school. 
