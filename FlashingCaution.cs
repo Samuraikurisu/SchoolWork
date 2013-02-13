@@ -4,7 +4,7 @@
 
 /*This code was written during an exam. It's main purpose is to stop a flashing display when an onscreen button would be pressed*/
 
-
+/*This uses the C# .NET Micro Framework. To follow along, find the resources for the framework on the MSDN blog*/
 using System;
 
 using Microsoft.SPOT;
